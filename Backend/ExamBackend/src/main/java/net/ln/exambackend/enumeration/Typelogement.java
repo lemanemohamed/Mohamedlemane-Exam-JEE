@@ -1,4 +1,5 @@
 package net.ln.exambackend.enumeration;
 
-public enum typelogement {
+public enum Typelogement {
+    Appartement, Maison, Local_commercial
 }

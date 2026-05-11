@@ -1,4 +1,7 @@
 package net.ln.exambackend.repositories;
 
-public class ClientRepos {
+import net.ln.exambackend.entities.Client;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClientRepos extends JpaRepository<Client,Long> {
 }

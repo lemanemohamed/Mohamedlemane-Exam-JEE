@@ -1,4 +1,5 @@
 package net.ln.exambackend.enumeration;
 
-public enum niveaucouverture {
+public enum Niveaucouverture {
+    Basique, Intermédiaire, Premium
 }

@@ -1,20 +1,17 @@
-package net.ln.exambackend.entities;
+package net.ln.exambackend.dtos;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import net.ln.exambackend.entities.ContratAssurance;
 
 import java.util.List;
 
-@Entity
-@Data @AllArgsConstructor @NoArgsConstructor
-public class Client {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+public class ClientDTO {
     private long id;
     private String nom;
     private String email;
-    @OneToMany(mappedBy = "client",fetch = FetchType.LAZY)
-    List<ContratAssurance> contratAssuranceList;
+
 }

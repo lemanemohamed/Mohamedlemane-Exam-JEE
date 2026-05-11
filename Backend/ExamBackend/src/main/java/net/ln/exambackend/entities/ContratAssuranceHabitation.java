@@ -1,15 +1,19 @@
 package net.ln.exambackend.entities;
 
-import net.ln.exambackend.enumeration.StatusContrat;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import net.ln.exambackend.enumeration.Typelogement;
 
-import java.util.Date;
-
-public class ContratAssuranceAutomobile {
-    private Long id;
-    private Date dateSouscription;
-    private StatusContrat statut;
-    private Date dateValidation;
-    private double montantcotisation;
-    private int dureeContrat;
-    private double tauxCouverture;
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@DiscriminatorValue("CAhabitation")
+public class ContratAssuranceHabitation extends ContratAssurance {
+    private Typelogement typelogement;
+    private int addresslogement;
+    private String supperficie;
 }
