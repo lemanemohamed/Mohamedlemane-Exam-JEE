@@ -3,6 +3,7 @@ package net.ln.exambackend.services;
 import lombok.RequiredArgsConstructor;
 import net.ln.exambackend.dtos.ClientDTO;
 import net.ln.exambackend.entities.Client;
+import net.ln.exambackend.entities.ContratAssurance;
 import net.ln.exambackend.mappers.ClientMapper;
 import net.ln.exambackend.repositories.ClientRepos;
 import org.springframework.beans.BeanUtils;
@@ -43,7 +44,8 @@ public class ClientServiceImpl implements IClientService {
     public ClientDTO saveclient(ClientDTO clientDTO) {
         Client client =new Client();
         BeanUtils.copyProperties(clientDTO,client);
-        client.setContratAssuranceList(new ArrayList<>());
+        List<ContratAssurance> contratAssuranceList=new ArrayList<>();
+        client.setContratAssuranceList(contratAssuranceList);
         clientRepos.save(client);
         return clientDTO;
     }
